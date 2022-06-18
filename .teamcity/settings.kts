@@ -47,6 +47,8 @@ object Build : BuildType({
 
     triggers {
         vcs {
+            quietPeriodMode = VcsTrigger.QuietPeriodMode.USE_CUSTOM
+            quietPeriod = 30
         }
     }
 })
