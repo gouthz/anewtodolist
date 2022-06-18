@@ -1,4 +1,4 @@
- import jetbrains.buildServer.configs.kotlin.*
+import jetbrains.buildServer.configs.kotlin.*
 import jetbrains.buildServer.configs.kotlin.buildSteps.maven
 import jetbrains.buildServer.configs.kotlin.triggers.vcs
 
@@ -38,6 +38,7 @@ project {
 }
 
 object Build : BuildType({
+    id("builds")
     name = "Build"
 
     vcs {
