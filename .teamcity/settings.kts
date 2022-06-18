@@ -1,4 +1,4 @@
-import jetbrains.buildServer.configs.kotlin.*
+ import jetbrains.buildServer.configs.kotlin.*
 import jetbrains.buildServer.configs.kotlin.buildSteps.maven
 import jetbrains.buildServer.configs.kotlin.triggers.vcs
 
@@ -40,7 +40,7 @@ object Build : BuildType({
 
     steps {
         maven {
-            goals = "clean test"
+            goals = "clean package"
             runnerArgs = "-Dmaven.test.failure.ignore=true"
         }
     }
