@@ -33,12 +33,29 @@ project {
 
     sequential{
         buildType(Build)
+        buildType(Build1)
         buildType(Package)
     }
 }
 
 object Build : BuildType({
     name = "Build"
+
+    vcs {
+        root(DslContext.settingsRoot)
+    }
+
+    steps {
+        maven {
+            goals = "clean compile"
+            runnerArgs = "-Dmaven.test.failure.ignore=true"
+        }
+    }
+
+})
+
+object Build1 : BuildType({
+    name = "Build1"
 
     vcs {
         root(DslContext.settingsRoot)
