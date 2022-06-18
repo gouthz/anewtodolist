@@ -68,6 +68,8 @@ object Package : BuildType({
     }
 
     triggers {
-        vcs
+        vcs{
+
+        }
     }
 })
